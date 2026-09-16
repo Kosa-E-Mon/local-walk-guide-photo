@@ -1,5 +1,11 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="100%" viewBox="0 0 1254 1254" enable-background="new 0 0 1254 1254" xml:space="preserve">
+	 width="1254" height="1254" viewBox="0 0 1254 1254" xml:space="preserve">
+<defs>
+  <!-- Convert neutral paper to transparency, retaining red ink and its texture. -->
+  <filter id="ink-alpha" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1.35 0 -1.35 0 -0.03"/>
+  </filter>
+  <g id="original-seal">
 <path fill="#FEFDFD" opacity="1.000000" stroke="none" 
 	d="
 M1.000000,427.000000 
@@ -37600,4 +37606,10 @@ M637.994385,855.992432
 	C637.604858,856.314941 637.658386,856.221375 637.863403,856.069336 
 	C638.014954,856.010864 638.000000,856.000000 637.994385,855.992432 
 z"/>
+  </g>
+  <mask id="transparent-paper" x="0" y="0" width="1254" height="1254" maskUnits="userSpaceOnUse">
+    <use xlink:href="#original-seal" filter="url(#ink-alpha)"/>
+  </mask>
+</defs>
+<use xlink:href="#original-seal" mask="url(#transparent-paper)"/>
 </svg>
